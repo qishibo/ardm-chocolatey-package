@@ -51,11 +51,9 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <bugTrackerUrl>https://github.com/qishibo/AnotherRedisDesktopManager/issues</bugTrackerUrl>
     <tags>another redis desktop manager</tags>
     <summary>A faster, better and more stable redis desktop manager [GUI client], compatible with Linux, Windows, Mac. What's more, it won't crash when loading massive keys.</summary>
-    <description><![CDATA[
-A faster, better and more stable redis desktop manager [GUI client], compatible with Linux, Windows, Mac. What's more, it won't crash when loading massive keys.
+    <description>A faster, better and more stable redis desktop manager [GUI client], compatible with Linux, Windows, Mac. What's more, it won't crash when loading massive keys.
 
-If you want to install on Mac\Linux\Windows, see [https://github.com/qishibo/AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager)
-]]></description>
+If you want to install on Mac\Linux\Windows, see https://github.com/qishibo/AnotherRedisDesktopManager</description>
     <releaseNotes>https://github.com/qishibo/AnotherRedisDesktopManager/releases</releaseNotes>
     <!-- =============================== -->
 
