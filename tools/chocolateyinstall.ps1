@@ -13,7 +13,7 @@ $packageArgs = @{
   checksum      = '46473be9018335d776a667ef447ad059239ebfd72a098e8cf787ce214323a873'
   checksumType  = 'sha256'
 
-  silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
+  silentArgs    = "/S"
   validExitCodes= @(0, 3010, 1641)
 }
 
