@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/qishibo/AnotherRedisDesktopManager/releases/download/v1.6.0/Another-Redis-Desktop-Manager.1.6.0.exe'
+$url        = 'https://github.com/qishibo/AnotherRedisDesktopManager/releases/download/v1.6.1/Another-Redis-Desktop-Manager.1.6.1.exe'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -10,7 +10,7 @@ $packageArgs = @{
 
   softwareName  = 'Another Redis Desktop Manager*'
 
-  checksum      = '5b78e8ac533f1888dd881c17cd158bb71455418ac96df0d2696c151a3fc0b757'
+  checksum      = '791116999c7c7d6522a0e207a7881a201f20ba58161b08776248e41d97e4ad24'
   checksumType  = 'sha256'
 
   silentArgs    = "/S"
