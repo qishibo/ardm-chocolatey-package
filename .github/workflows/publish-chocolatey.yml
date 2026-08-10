@@ -39,7 +39,8 @@ jobs:
           PACKAGE_VERSION: ${{ inputs.version }}
         with:
           package-paths: |
-            .
+            another-redis-desktop-manager.nuspec
+            tools
           push: true
           token: ${{ secrets.CHOCO_GITHUB_TOKEN }}
           api-key: ${{ secrets.CHOCO_API_KEY }}
