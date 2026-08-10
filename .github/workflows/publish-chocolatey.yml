@@ -1,0 +1,47 @@
+name: Publish to Chocolatey
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release tag to publish (e.g. v1.6.8)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate version tag
+        env:
+          PACKAGE_VERSION: ${{ inputs.version }}
+        run: |
+          $tag = $env:PACKAGE_VERSION.Trim()
+          if ($tag -notmatch '^v\d+\.\d+\.\d+([.-].+)?$') {
+            throw "Invalid version '$tag'. Expected format like v1.6.8"
+          }
+          Write-Host "Publishing release tag: $tag"
+          Write-Host "Download URL: https://github.com/qishibo/AnotherRedisDesktopManager/releases/download/$tag/Another-Redis-Desktop-Manager.$($tag.TrimStart('v')).exe"
+
+      - name: Download exe, update package, pack and push
+        uses: chocolatey-community/chocolatey-au-action@1.0
+        env:
+          PACKAGE_VERSION: ${{ inputs.version }}
+        with:
+          package-paths: .
+          push: true
+          token: ${{ secrets.CHOCO_GITHUB_TOKEN }}
+          api-key: ${{ secrets.CHOCO_API_KEY }}
+          test-install: true
+          commit-changes: true
+          commit-message: 'chore: publish another-redis-desktop-manager ${{ inputs.version }}'
