@@ -38,11 +38,9 @@ jobs:
         env:
           PACKAGE_VERSION: ${{ inputs.version }}
         with:
-          package-paths: |
-            another-redis-desktop-manager.nuspec
-            tools
+          # Must be the package DIRECTORY (name == nuspec basename), not file paths
+          package-paths: another-redis-desktop-manager
           push: true
-          token: ${{ secrets.CHOCO_GITHUB_TOKEN }}
           api-key: ${{ secrets.CHOCO_API_KEY }}
           test-install: true
           commit-changes: true
