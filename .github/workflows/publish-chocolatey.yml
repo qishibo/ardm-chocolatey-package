@@ -31,14 +31,15 @@ jobs:
             throw "Invalid version '$tag'. Expected format like v1.6.8"
           }
           Write-Host "Publishing release tag: $tag"
-          Write-Host "Download URL: https://github.com/qishibo/AnotherRedisDesktopManager/releases/download/$tag/Another-Redis-Desktop-Manager.$($tag.TrimStart('v')).exe"
+          Write-Host "Download URL: https://github.com/qishibo/AnotherRedisDesktopManager/releases/download/$tag/Another-Redis-Desktop-Manager-win-$($tag.TrimStart('v')).exe"
 
       - name: Download exe, update package, pack and push
         uses: chocolatey-community/chocolatey-au-action@1.0
         env:
           PACKAGE_VERSION: ${{ inputs.version }}
         with:
-          package-paths: .
+          package-paths: |
+            .
           push: true
           token: ${{ secrets.CHOCO_GITHUB_TOKEN }}
           api-key: ${{ secrets.CHOCO_API_KEY }}

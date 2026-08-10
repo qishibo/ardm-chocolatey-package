@@ -12,7 +12,7 @@ function global:au_GetLatest {
     }
 
     $version = $Matches[1]
-    $url = "https://github.com/qishibo/AnotherRedisDesktopManager/releases/download/$tag/Another-Redis-Desktop-Manager.$version.exe"
+    $url = "https://github.com/qishibo/AnotherRedisDesktopManager/releases/download/$tag/Another-Redis-Desktop-Manager-win-$version.exe"
 
     @{
         Version = $version
