@@ -13,7 +13,7 @@ $packageArgs = @{
   checksum      = '28af6a9756b93a59cbd71ee9120351ad7cc1280e48e57832fe10013f6d9784ce'
   checksumType  = 'sha256'
 
-  silentArgs    = "/S"
+  silentArgs    = "/S /allusers"
   validExitCodes= @(0, 3010, 1641)
 }
 
